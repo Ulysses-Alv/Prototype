@@ -291,6 +291,7 @@ GameObject:
   - component: {fileID: 74981546}
   - component: {fileID: 74981545}
   - component: {fileID: 74981544}
+  - component: {fileID: 74981548}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -331,7 +332,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 3945423495732502827, guid: ca40bcaab931f664bb8884b77b720e18, type: 3}
+  - {fileID: 2100000, guid: d7bd9bfe6f88a664aa217613a1b5428f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -375,6 +376,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &74981548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74981543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcbb363b6ffec3644a2c13ced503bf28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planeMaterial: {fileID: 2100000, guid: d7bd9bfe6f88a664aa217613a1b5428f, type: 2}
+  duration: 15
+  target: 0.01
 --- !u!1001 &102781712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -533,7 +549,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5dce1f8fd86e04f42a922b7a3ce2a2a7, type: 2}
+  - {fileID: 2100000, guid: 173a251a485209546a2cf62537e8ce11, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -573,8 +589,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.457, z: 0.842}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1990523402}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2972,11 +2987,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1990523401}
   m_LocalRotation: {x: -0, y: 0.9659258, z: -0, w: 0.2588191}
-  m_LocalPosition: {x: 0.004, y: 0.99899995, z: -0.027}
+  m_LocalPosition: {x: 0.004, y: 0.542, z: 0.815}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
-  m_Father: {fileID: 149182301}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 150, z: 0}
 --- !u!1001 &2062041091
 PrefabInstance:
@@ -3149,8 +3164,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rootPosition: {fileID: 1990523402}
-  targetMultiplier: 0.3
-  duration: 0.5
+  targetMultiplier: 0.4
+  duration: 0.3
+  durationReturn: 0.3
 --- !u!114 &3835694911537152789
 MonoBehaviour:
   m_ObjectHideFlags: 0
