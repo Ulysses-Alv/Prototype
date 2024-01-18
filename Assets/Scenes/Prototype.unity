@@ -3108,8 +3108,8 @@ GameObject:
   - component: {fileID: 3835694911537152787}
   - component: {fileID: 3835694911537152796}
   - component: {fileID: 3835694911537152791}
-  - component: {fileID: 3835694911537152798}
   - component: {fileID: 3835694911537152797}
+  - component: {fileID: 3835694911537152798}
   m_Layer: 0
   m_Name: Tractor
   m_TagString: Untagged
@@ -3125,7 +3125,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3835694911537152786}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 9db2509d2a7ef634fb85f715c1080772, type: 2}
   m_CullingMode: 0
@@ -3149,6 +3149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rootPosition: {fileID: 1990523402}
+  targetMultiplier: 0.3
+  duration: 0.5
 --- !u!114 &3835694911537152789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3164,34 +3166,10 @@ MonoBehaviour:
   _interactableView: {fileID: 3835694911537152796}
   _whenHover:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3835694911537152788}
-        m_TargetAssemblyTypeName: Tractor, Assembly-CSharp
-        m_MethodName: OnHover
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _whenUnhover:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3835694911537152788}
-        m_TargetAssemblyTypeName: Tractor, Assembly-CSharp
-        m_MethodName: UnHover
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
@@ -3294,6 +3272,9 @@ MonoBehaviour:
   _twoGrabTransformer: {fileID: 3835694911537152798}
   _targetTransform: {fileID: 0}
   _maxGrabPoints: -1
+  whenOnTwoPointGrabbed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &3835694911537152792
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3397,16 +3378,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 3835694911537152786}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 124f4583f657475469a45ab6fca8f921, type: 3}
+  m_Script: {fileID: 11500000, guid: e9597e632dfbca247bcf65e49c67078e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pivotTransform: {fileID: 0}
-  _rotationAxis: 1
   _constraints:
-    MinAngle:
+    ConstraintsAreRelative: 0
+    MinX:
       Constrain: 0
       Value: 0
-    MaxAngle:
+    MaxX:
+      Constrain: 0
+      Value: 0
+    MinY:
+      Constrain: 0
+      Value: 0
+    MaxY:
+      Constrain: 0
+      Value: 0
+    MinZ:
+      Constrain: 0
+      Value: 0
+    MaxZ:
       Constrain: 0
       Value: 0
 --- !u!114 &3835694911537152798
@@ -3418,21 +3410,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 3835694911537152786}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6df9170afc57784b96d6597da7a916e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b80644816ce922468d6e1dc8c12daff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _planeTransform: {fileID: 0}
+  _pivotTransform: {fileID: 0}
+  _rotationAxis: 1
   _constraints:
-    MinScale:
-      Constrain: 0
-      Value: 0.1
-    MaxScale:
-      Constrain: 0
-      Value: 0.1
-    MinY:
+    MinAngle:
       Constrain: 0
       Value: 0
-    MaxY:
+    MaxAngle:
       Constrain: 0
       Value: 0
 --- !u!4 &4499360595686087080

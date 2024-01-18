@@ -20,6 +20,7 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Oculus.Interaction
 {
@@ -40,6 +41,8 @@ namespace Oculus.Interaction
 
         [SerializeField]
         private int _maxGrabPoints = -1;
+
+        [SerializeField] private UnityEvent whenOnTwoPointGrabbed;
 
         public int MaxGrabPoints
         {
@@ -152,6 +155,7 @@ namespace Oculus.Interaction
                     _activeTransformer = OneGrabTransformer;
                     break;
                 case 2:
+                    whenOnTwoPointGrabbed.Invoke();
                     _activeTransformer = TwoGrabTransformer;
                     break;
                 default:
@@ -169,12 +173,7 @@ namespace Oculus.Interaction
 
         private void UpdateTransform()
         {
-            if (_activeTransformer == null)
-            {
-                return;
-            }
-
-            _activeTransformer.UpdateTransform();
+            _activeTransformer?.UpdateTransform();
         }
 
         private void EndTransform()
