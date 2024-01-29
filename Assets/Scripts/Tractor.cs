@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Tractor : MonoBehaviour
 {
-    private Animator animator => GetComponent<Animator>();
+    private Animator animator;
 
     private bool CanUnHover = false;
 
@@ -16,6 +16,10 @@ public class Tractor : MonoBehaviour
     
     [SerializeField] private float durationReturn;
 
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
     public void OnHover()
     {
         animator.SetTrigger("OnHover");

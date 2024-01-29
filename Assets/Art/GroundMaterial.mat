@@ -104,7 +104,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_7212a05efa014f28a2a5f09e0a84f3e7: {r: 1, g: 1, b: 1, a: 0}
-    - TransitionVector: {r: 0, g: 0.010498785, b: 0, a: 0}
+    - TransitionVector: {r: 0, g: 0.012448718, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
