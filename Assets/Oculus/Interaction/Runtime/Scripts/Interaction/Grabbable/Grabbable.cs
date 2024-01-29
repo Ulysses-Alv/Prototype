@@ -42,6 +42,7 @@ namespace Oculus.Interaction
         [SerializeField]
         private int _maxGrabPoints = -1;
 
+        [SerializeField] private UnityEvent whenOnOnePointGrabbed;
         [SerializeField] private UnityEvent whenOnTwoPointGrabbed;
 
         public int MaxGrabPoints
@@ -152,6 +153,7 @@ namespace Oculus.Interaction
             switch (useGrabPoints)
             {
                 case 1:
+                    whenOnOnePointGrabbed.Invoke();
                     _activeTransformer = OneGrabTransformer;
                     break;
                 case 2:
