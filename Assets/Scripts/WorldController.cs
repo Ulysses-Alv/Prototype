@@ -2,8 +2,11 @@
 
 public class WorldController : MonoBehaviour
 {
-    Rigidbody rb => GetComponent<Rigidbody>();
+    Rigidbody rb;
 
-    
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
 }
